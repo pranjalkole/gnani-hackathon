@@ -1,0 +1,3 @@
+# Local secret notes and environment files
+/notes.txt
+.env*.local

@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Delivery Note DN-2086</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #e9eeea;
+        color: #18231f;
+        font-family: "DejaVu Sans", "Liberation Sans", Arial, sans-serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        padding: 16mm 16mm 14mm;
+        background: #ffffff;
+      }
+
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 14mm;
+        padding-bottom: 8mm;
+        border-bottom: 2.5pt solid #1f4d3d;
+      }
+
+      .brand-name {
+        margin: 0;
+        color: #1f4d3d;
+        font-size: 23pt;
+        font-weight: 800;
+        letter-spacing: 0.4pt;
+      }
+
+      .brand-line {
+        margin: 2mm 0 0;
+        color: #5d6b64;
+        font-size: 8.5pt;
+        letter-spacing: 0.2pt;
+      }
+
+      .doc-title {
+        margin: 0;
+        color: #1f4d3d;
+        font-size: 17pt;
+        font-weight: 800;
+        letter-spacing: 1.6pt;
+        text-align: right;
+      }
+
+      .doc-number {
+        margin: 2mm 0 0;
+        color: #18231f;
+        font-size: 12pt;
+        font-weight: 700;
+        text-align: right;
+      }
+
+      .details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5mm 14mm;
+        margin-top: 9mm;
+        padding: 7mm 8mm;
+        background: #f2f6f3;
+        border: 1pt solid #cfdad3;
+        border-radius: 2.5mm;
+      }
+
+      .field-label {
+        display: block;
+        margin-bottom: 1.6mm;
+        color: #66736c;
+        font-size: 7.5pt;
+        font-weight: 700;
+        letter-spacing: 1.1pt;
+        text-transform: uppercase;
+      }
+
+      .field-value {
+        color: #18231f;
+        font-size: 13pt;
+        font-weight: 700;
+      }
+
+      .field-value.small {
+        font-size: 11.5pt;
+      }
+
+      .items-title {
+        margin: 11mm 0 4mm;
+        color: #1f4d3d;
+        font-size: 10pt;
+        font-weight: 800;
+        letter-spacing: 1.2pt;
+        text-transform: uppercase;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13pt;
+      }
+
+      thead th {
+        padding: 4mm 4mm;
+        background: #1f4d3d;
+        color: #ffffff;
+        font-size: 8.5pt;
+        font-weight: 700;
+        letter-spacing: 1pt;
+        text-align: left;
+        text-transform: uppercase;
+      }
+
+      thead th.qty {
+        width: 34mm;
+        text-align: right;
+      }
+
+      tbody td {
+        padding: 5.5mm 4mm;
+        border-bottom: 1pt solid #d8e1db;
+        vertical-align: middle;
+      }
+
+      tbody td.qty {
+        color: #1f4d3d;
+        font-size: 17pt;
+        font-weight: 800;
+        text-align: right;
+      }
+
+      tbody tr:nth-child(even) td {
+        background: #f7faf8;
+      }
+
+      .note-box {
+        margin-top: 10mm;
+        padding: 5mm 6mm;
+        background: #fbf7ea;
+        border-left: 3pt solid #c9a84c;
+        color: #5b5138;
+        font-size: 9.5pt;
+        line-height: 1.55;
+      }
+
+      .note-box strong {
+        color: #3f3828;
+      }
+
+      .signatures {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20mm;
+        margin-top: 26mm;
+      }
+
+      .signature-line {
+        padding-top: 12mm;
+        border-bottom: 1pt solid #67756e;
+        color: #66736c;
+        font-size: 8pt;
+        letter-spacing: 0.8pt;
+        text-transform: uppercase;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 10mm;
+        margin-top: 20mm;
+        padding-top: 4mm;
+        border-top: 1pt solid #d8e1db;
+        color: #7a877f;
+        font-size: 8pt;
+      }
+
+      @media screen {
+        body {
+          padding: 16px 0;
+        }
+
+        .page {
+          box-shadow: 0 8px 30px rgba(20, 40, 32, 0.14);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="top">
+        <div>
+          <p class="brand-name">ACME SUPPLIES</p>
+          <p class="brand-line">Building materials &amp; site supplies</p>
+        </div>
+        <div>
+          <p class="doc-title">DELIVERY NOTE</p>
+        </div>
+      </header>
+
+      <section class="details" aria-label="Delivery details">
+        <div>
+          <span class="field-label">PO number</span>
+          <div class="field-value">PO-1042</div>
+        </div>
+        <div>
+          <span class="field-label">Delivery note number</span>
+          <div class="field-value">DN-2086</div>
+        </div>
+        <div>
+          <span class="field-label">Delivery date</span>
+          <div class="field-value">10 November 2026</div>
+        </div>
+        <div>
+          <span class="field-label">Supplier</span>
+          <div class="field-value small">Acme Supplies</div>
+        </div>
+        <div>
+          <span class="field-label">Deliver to</span>
+          <div class="field-value small">Riverside Tower</div>
+        </div>
+      </section>
+
+      <h2 class="items-title">Items delivered</h2>
+
+      <table aria-label="Delivered items">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th class="qty">Qty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cement bags</td>
+            <td class="qty">50</td>
+          </tr>
+          <tr>
+            <td>Steel rebar</td>
+            <td class="qty">20</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <section class="note-box">
+        <strong>Remarks:</strong> Delivered in good condition. Keep this delivery
+        note with the site records.
+      </section>
+
+      <section class="signatures" aria-label="Signatures">
+        <div class="signature-line">Received by</div>
+        <div class="signature-line">Authorised signature</div>
+      </section>
+
+      <footer class="footer">
+        <span>Acme Supplies · Riverside Tower</span>
+        <span>Delivery note</span>
+      </footer>
+    </main>
+  </body>
+</html>

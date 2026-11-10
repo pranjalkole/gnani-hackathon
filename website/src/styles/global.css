@@ -1,0 +1,140 @@
+@import '@fontsource-variable/inter';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --shell: 78rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+    font-feature-settings: 'cv11' 1, 'ss01' 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: theme('colors.accent');
+    color: theme('colors.forest-deep');
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.forest');
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: theme('colors.canvas');
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: theme('colors.line-strong');
+    border: 3px solid theme('colors.canvas');
+    border-radius: 999px;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-shell px-5 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-ink-faint;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1 text-[12px] font-medium text-ink-soft;
+  }
+
+  .btn {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-5 text-sm font-semibold transition duration-300 ease-out-expo;
+  }
+
+  .btn-primary {
+    @apply btn bg-forest text-surface hover:bg-forest-deep hover:shadow-[0_14px_30px_-18px_rgba(14,44,36,0.9)] active:scale-[0.985];
+  }
+
+  .btn-ghost {
+    @apply btn border border-line-strong bg-transparent text-ink hover:border-forest hover:bg-surface active:scale-[0.985];
+  }
+
+  .card {
+    @apply rounded-2xl border border-line bg-surface;
+  }
+}
+
+@layer utilities {
+  .text-hero {
+    font-size: clamp(2.6rem, 7.2vw, 5.9rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    font-weight: 700;
+  }
+
+  .text-section {
+    font-size: clamp(2rem, 4.4vw, 3.4rem);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+  }
+
+  .text-chapter {
+    font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+  }
+
+  .grain::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

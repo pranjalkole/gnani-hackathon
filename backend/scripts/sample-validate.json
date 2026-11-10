@@ -1,0 +1,20 @@
+{
+  "poNumber": "PO-1042",
+  "deliveryNoteNumber": "DN-1042",
+  "supplier": "Acme Supplies",
+  "deliveryDate": "2026-11-06",
+  "site": "Riverside Tower",
+  "items": [
+    {
+      "poItemId": "00000000-0000-0000-0000-000000000011",
+      "description": "Cement bags",
+      "quantity": 50
+    },
+    {
+      "poItemId": "00000000-0000-0000-0000-000000000012",
+      "description": "Steel rebar",
+      "quantity": 20
+    }
+  ],
+  "rawOcrText": "DELIVERY NOTE DN-1042\nPO No: PO-1042\nSupplier: Acme Supplies\nSite: Riverside Tower\nCement bags 50\nSteel rebar 20"
+}
